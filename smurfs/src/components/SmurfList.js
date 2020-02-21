@@ -1,11 +1,10 @@
 import React, { useEffect } from "react";
-import SmurfCard from "./SmurfCard.js";
 import { connect } from "react-redux";
 
+import SmurfCard from "./SmurfCard.js";
 import { fetchSmurfs } from "../actions/actions.js";
 
-const SmurfList = (props) => {
-    console.log(props)
+const SmurfList = props => {
 
     useEffect(() => {
         props.fetchSmurfs()
@@ -27,7 +26,7 @@ const SmurfList = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        players: state.smurfs,
+        smurfs: state.smurfs,
         isFetching: state.isFetching,
         errors: state.errors
     }

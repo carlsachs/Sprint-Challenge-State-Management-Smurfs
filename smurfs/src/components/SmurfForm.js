@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 import  { postSmurfs } from "../actions/actions.js";
 
-const SmurfForm = (props) => {
+const SmurfForm = props => {
     
     const [smurf, setSmurf] = useState({
         name: "",
@@ -19,7 +19,7 @@ const SmurfForm = (props) => {
 
     const submitHandler = e => {
         e.preventDefault();
-        props.postSmurf(smurf);
+        props.postSmurfs(smurf);
     }
 
     return (
@@ -63,7 +63,7 @@ const SmurfForm = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        players: state.smurfs,
+        smurfs: state.smurfs,
         errors: state.errors
     }
 }

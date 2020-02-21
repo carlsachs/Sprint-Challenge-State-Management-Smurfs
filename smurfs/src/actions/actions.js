@@ -4,7 +4,7 @@ export const FETCH_DATA = "FETCH_DATA";
 export const FETCH_SUCCESS = "FETCH_SUCCESS";
 export const FETCH_FAIL = "FETCH_FAIL";
 
-export const fetchPlayers = () => dispatch => {
+export const fetchSmurfs = () => dispatch => {
     dispatch({ type: FETCH_DATA })
 
     axios
@@ -24,11 +24,11 @@ export const fetchPlayers = () => dispatch => {
 export const POST_DATA = "POST_DATA";
 export const POST_SUCCESS = "POST_SUCCESS";
 export const POST_FAIL = "POST_FAIL";
-export const postPlayers = (player) => dispatch => {
+export const postSmurfs = (smurf) => dispatch => {
     dispatch({ type: POST_DATA })
 
     axios
-        .post(`http://localhost:3000/smurfs`)//, smurf)
+        .post(`http://localhost:3000/smurfs`, smurf)
         .then(res => {
             console.log(res.data);
             dispatch({ type: POST_SUCCESS, payload: res.data })

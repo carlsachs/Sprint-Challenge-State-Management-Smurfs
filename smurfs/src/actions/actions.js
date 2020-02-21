@@ -28,7 +28,7 @@ export const postPlayers = (player) => dispatch => {
     dispatch({ type: POST_DATA })
 
     axios
-        .post(`http://localhost:3000/smurfs`, smurf)
+        .post(`http://localhost:3000/smurfs`)//, smurf)
         .then(res => {
             console.log(res.data);
             dispatch({ type: POST_SUCCESS, payload: res.data })
